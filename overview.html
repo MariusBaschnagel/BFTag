@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <head>
     <title>Alarmsystem BF Tag | Anmeldung</title>
     <link rel="stylesheet" href="style.css">
@@ -12,59 +11,18 @@
     <!-- <link rel="icon" type="image/png" href="/images/favicon/favicon-32x32.png" sizes="32x32"> -->
     <!-- <link rel="icon" type="image/png" href="/images/favicon/favicon-16x16.png" sizes="16x16"> -->
     <link rel="stylesheet" href="./static/css/index.css">
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-    <script>
-        window.addEventListener("load", function() {
-            window.cookieconsent.initialise({
-                "palette": {
-                    "popup": {
-                        "background": "#cbcbcb",
-                        "text": "#000000"
-                    },
-                    "button": {
-                        "background": "#8b0000"
-                    }
-                },
-                "content": {
-                    "message": "Zur optimalen Nutzererfahrung nutzen wir auf unserer Website Cookies.",
-                    "dismiss": "Einverstanden",
-                    "link": "Mehr Informationen",
-                    "href": "./datenschutz.html"
-                }
-            })
-        });
-    </script>
+    <script src="./static/js/alarmtest.js" defer></script>
 </head>
 
 <body>
     <div id="wrapper">
         <div id="main">
-            <div id="box">
-                <h1>Alarmsystem BF Tag</h1>
-
-                <form action="?login=1" method="post">
-                    <table style="width:300px; text-align:left;" align="center">
-                        <tr>
-                            <td>Nutzername</td>
-                            <td><input type="text" size="15" maxlength="7" name="zugangscode" required></td>
-                        </tr>
-                        <tr>
-                            <td>Passwort</td>
-                            <td><input type="text" size="15" maxlength="50" name="ortswehr" required></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><input type="text" name="human" style="display: none;"></td>
-                        </tr>
-                    </table>
-                    <!-- <br><label><input type="checkbox" name="angemeldet_bleiben" value="1"> Angemeldet bleiben</label><br> -->
-
-                    <input type="submit" name="submit" id="submit" value="Anmelden"></br></br>
-                </form><br>
-                <br>
+            <div class="widebox">
+                <h1>Menü</h1>
+                <button type="menu">Neuer Einsatz</button>
+                <button type="menu">Einsatzmonitor</button>
+                <button type="menu">Fahrzeuge verwalten</button>
+                <button type="menu" id="probealarm">Probealarm</button>
             </div>
         </div>
     </div>
