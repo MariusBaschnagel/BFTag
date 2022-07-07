@@ -1,0 +1,358 @@
+html {
+    height: 99%;
+}
+
+body {
+    height: 99%;
+    width: 99%;
+    font-family: Arial;
+    background-image: url("../media/hintergrundbild.jpg"); 
+    background-repeat:no-repeat;
+    background-position:center;
+    background-attachment:fixed;
+    background-color: #333;
+}
+
+h1 {
+    color: white;
+    font-size: 50;
+}
+
+h2 {
+    color: gray;
+    font-size: 30;
+}
+
+h3 {
+    color: white;
+    font-size: 20;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: DarkRed;
+}
+
+th {
+    text-align: left;
+}
+
+button {
+    font-family: Arial;
+}
+
+#main {
+    font-family: Arial;
+    color: white;
+    text-align: center;
+}
+
+#wrapper {
+    position: relative;
+    min-height: 100%;
+    min-width: 500px;
+}
+
+#box {
+    border-left: 6px solid DarkRed;
+    background-color: hsla(0, 0%, 50%, 0.9);
+    width: 50%;
+    max-width: 500px;
+    min-width: 330px;
+    margin: 0 auto;
+    padding: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+#box-text {
+    border-left: 6px solid DarkRed;
+    background-color: hsla(0, 0%, 50%, 0.9);
+    width: 60%;
+    max-width: 700px;
+    min-width: 330px;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#heading {
+    vertical-align: center;
+    width: 80%;
+    min-width: 330px;
+    margin: 0 auto;
+    padding: 1px;
+}
+
+#bewertung {
+    display: none;
+}
+
+footer {
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 30px;
+    width: 50%;
+    max-width: 500px;
+    min-width: 400px;
+    margin: auto;
+    margin-top: -3em;
+    font-family: Arial;
+    background-color: hsla(0, 0%, 50%, 0.9);
+    text-align: center;
+    bottom: 0;
+    border-radius: 10px;
+}
+
+#footer-text {
+    height: 30px;
+    line-height: 30px;
+    white-space: nowrap;
+}
+
+#fz {
+    font-size: 75px;
+    text-align: center;
+    min-width: 350px;
+    min-height: 200px;
+    max-height: 400px;
+    height: 27%;
+    border: 5px solid gray;
+    color: gray;
+    line-height: 80%;
+    flex: 1 0;
+}
+
+#fz_alarm {
+    -webkit-animation: redblink 1s;
+    -webkit-animation-iteration-count: infinite;
+    background-color: darkred;
+    font-size: 75px;
+    text-align: center;
+    min-width: 350px;
+    min-height: 200px;
+    max-height: 400px;
+    height: 27%;
+    border: 5px solid gray;
+    color: gray;
+    line-height: 80%;
+    flex: 1 0;
+}
+
+@-webkit-keyframes redblink {
+    from {
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: DarkRed;
+    }
+
+    to {
+        background-color: transparent;
+    }
+}
+
+@keyframes redblink {
+    from {
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: DarkRed;
+    }
+
+    to {
+        background-color: transparent;
+    }
+}
+
+@-webkit-keyframes yellowblink {
+    from {
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: #ffff00;
+    }
+
+    to {
+        background-color: transparent;
+    }
+}
+
+@keyframes yellowblink {
+    from {
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: #ffff00;
+    }
+
+    to {
+        background-color: transparent;
+    }
+}
+
+@-webkit-keyframes warnblink {
+    from {
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: #ff0000;
+    }
+
+    to {
+        background-color: transparent;
+    }
+}
+
+@keyframes warnblink {
+    from {
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: #ff0000;
+    }
+
+    to {
+        background-color: transparent;
+    }
+}
+
+@media screen and (max-width:1300px) {
+    textarea {
+        width: 540px;
+        height: 150px;
+    }
+
+    #infofenster {
+        width: 98%;
+        float: left;
+        padding-bottom: 20px;
+        margin-top: 20px;
+        position: relative;
+        bottom: 0px;
+        min-width: 550px;
+        max-height: 580px;
+    }
+
+    #einsatz_aktuell {
+        width: 98%;
+        height: 85%;
+        float: left;
+        position: relative;
+        min-width: 550px;
+    }
+
+    #fms {
+        width: 98%;
+        height: 85%;
+        float: left;
+        position: relative;
+        min-width: 550px;
+    }
+
+    #steuerungsfenster {
+        width: 98%;
+        margin-top: 20px;
+        padding-bottom: 20px;
+        position: relative;
+        min-width: 550px;
+        max-height: 400px;
+    }
+
+    #box {
+        width: 95%;
+        border-radius: 10px;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    #box-text {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    footer {
+        clear: both;
+        position: relative;
+        z-index: 10;
+        height: 3em;
+        margin-top: -3em;
+        width: 100%;
+        min-width: 500px;
+    }
+}
+
+.button {
+    background-color: DarkRed;
+    border: none;
+    color: white;
+    padding: 15px 5px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    float: center;
+    font-family: Arial;
+    min-width: 80px;
+    cursor: default;
+}
+
+.button_disabled {
+    background-color: gray;
+    border: none;
+    color: white;
+    padding: 15px 5px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    float: center;
+    font-family: Arial;
+    min-width: 80px;
+    cursor: not-allowed;
+}
+
+.button:hover {
+    background-color: white;
+    color: DarkRed;
+    cursor: default;
+}
+
+#submit {
+    background-color: DarkRed;
+    border: none;
+    color: white;
+    padding: 15px 5px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    float: center;
+    font-family: Arial;
+    min-width: 80px;
+}
+
+.g-recaptcha {
+    display: inline-block;
+}
+
+#submit:hover {
+    background-color: white;
+    color: DarkRed;
+}
