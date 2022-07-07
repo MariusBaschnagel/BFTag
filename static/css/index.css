@@ -5,16 +5,17 @@ html {
 body {
     height: 99%;
     width: 99%;
-    font-family: Arial;
-    background-image: url("../media/hintergrundbild.jpg"); 
-    background-repeat:no-repeat;
-    background-position:center;
-    background-attachment:fixed;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    background-image: url("../media/hintergrundbild.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
     background-color: #333;
 }
 
 h1 {
-    color: white;
+    color: black;
     font-size: 50;
 }
 
@@ -24,7 +25,7 @@ h2 {
 }
 
 h3 {
-    color: white;
+    color: black;
     font-size: 20;
 }
 
@@ -40,13 +41,9 @@ th {
     text-align: left;
 }
 
-button {
-    font-family: Arial;
-}
-
 #main {
-    font-family: Arial;
-    color: white;
+    font-family: 'Open Sans', sans-serif;
+    color: black;
     text-align: center;
 }
 
@@ -56,9 +53,9 @@ button {
     min-width: 500px;
 }
 
-#box {
-    border-left: 6px solid DarkRed;
-    background-color: hsla(0, 0%, 50%, 0.9);
+.box {
+    border: 6px solid DarkRed;
+    background-color: hsla(0, 0%, 100%, 0.9);
     width: 50%;
     max-width: 500px;
     min-width: 330px;
@@ -71,9 +68,26 @@ button {
     border-radius: 10px;
 }
 
+.widebox {
+    border: 3px solid DarkRed;
+    background-color: hsla(0, 0%, 100%, 0.9);
+    width: 70%;
+    max-width: 70em;
+    min-width: 335px;
+    margin: 0 auto;
+    padding: 0.5em;
+    border-radius: 10px;
+}
+
+.widebox h1,
+h2,
+h3 {
+    color: black;
+}
+
 #box-text {
     border-left: 6px solid DarkRed;
-    background-color: hsla(0, 0%, 50%, 0.9);
+    background-color: hsla(0, 0%, 100%, 0.9);
     width: 60%;
     max-width: 700px;
     min-width: 330px;
@@ -104,7 +118,6 @@ footer {
     min-width: 400px;
     margin: auto;
     margin-top: -3em;
-    font-family: Arial;
     background-color: hsla(0, 0%, 50%, 0.9);
     text-align: center;
     bottom: 0;
@@ -298,7 +311,7 @@ footer {
 .button {
     background-color: DarkRed;
     border: none;
-    color: white;
+    color: black;
     padding: 15px 5px;
     margin: 5px;
     text-align: center;
@@ -306,7 +319,6 @@ footer {
     display: inline-block;
     font-size: 16px;
     float: center;
-    font-family: Arial;
     min-width: 80px;
     cursor: default;
 }
@@ -314,7 +326,7 @@ footer {
 .button_disabled {
     background-color: gray;
     border: none;
-    color: white;
+    color: black;
     padding: 15px 5px;
     margin: 5px;
     text-align: center;
@@ -322,7 +334,6 @@ footer {
     display: inline-block;
     font-size: 16px;
     float: center;
-    font-family: Arial;
     min-width: 80px;
     cursor: not-allowed;
 }
@@ -335,7 +346,7 @@ footer {
 
 #submit {
     background-color: DarkRed;
-    border: none;
+    border: 3px solid darkred;
     color: white;
     padding: 15px 5px;
     margin: 5px;
@@ -344,15 +355,12 @@ footer {
     display: inline-block;
     font-size: 16px;
     float: center;
-    font-family: Arial;
     min-width: 80px;
-}
-
-.g-recaptcha {
-    display: inline-block;
+    border-radius: 10px;
 }
 
 #submit:hover {
     background-color: white;
+    border: 3px solid darkred;
     color: DarkRed;
 }
