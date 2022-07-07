@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Alarmsystem BF Tag | Anmeldung</title>
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="language" content="deutsch, de">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <meta http-equiv="imagetoolbar" content="false">
+    <meta name="page-topic" content="System">
+    <meta name="robots" content="INDEX,NOFOLLOW">
+    <meta name="viewport" content="width=device-width">
+    <!-- <link rel="icon" type="image/png" href="/images/favicon/favicon-32x32.png" sizes="32x32"> -->
+    <!-- <link rel="icon" type="image/png" href="/images/favicon/favicon-16x16.png" sizes="16x16"> -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+        window.addEventListener("load", function() {
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#cbcbcb",
+                        "text": "#000000"
+                    },
+                    "button": {
+                        "background": "#8b0000"
+                    }
+                },
+                "content": {
+                    "message": "Zur optimalen Nutzererfahrung nutzen wir auf unserer Website Cookies.",
+                    "dismiss": "Einverstanden",
+                    "link": "Mehr Informationen",
+                    "href": "https://bftag-online.de/datenschutz.php"
+                }
+            })
+        });
+    </script>
+</head>
+
+<body style="background-image: url('./hintergrundbild.jpg'); background-repeat:no-repeat;background-position:center; background-attachment:fixed;">
+    <div id="wrapper">
+        <div id="main">
+            <div id="box">
+                <h1>Alarmsystem BF Tag</h1>
+
+
+                <p>Bitte anmelden!</p>
+                <form action="?login=1" method="post">
+                    <table style="width:300px; text-align:left;" align="center">
+                        <tr>
+                            <td>Nutzername</td>
+                            <td><input type="text" size="15" maxlength="7" name="zugangscode" required></td>
+                        </tr>
+                        <tr>
+                            <td>Passwort</td>
+                            <td><input type="text" size="15" maxlength="50" name="ortswehr" required></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="text" name="human" style="display: none;"></td>
+                        </tr>
+                    </table>
+                    <!-- <br><label><input type="checkbox" name="angemeldet_bleiben" value="1"> Angemeldet bleiben</label><br> -->
+
+                    <input type="submit" name="submit" id="submit" value="Anmelden"></br></br>
+                </form><br>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-index">
+        <span id="footer-text">
+            <a href="/info.php">Informationen</a> | <a href="https://support.it93.de/" target"_blank">Kontakt</a> | <a href="datenschutz.php">Datenschutz</a> | <a href="impressum.php">Impressum</a></span><br>
+        <div class="rating">
+    </footer>
+
+
+</body>
+
+</html>
