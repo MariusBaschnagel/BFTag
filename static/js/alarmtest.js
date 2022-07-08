@@ -18,9 +18,10 @@ const GWL = new Audio("./static/audio/fahrzeuge/GWL.mp3");
 const GWAS = new Audio("./static/audio/fahrzeuge/GWAS.mp3");
 /******************************************************************************/
 
-const audioArray = [einsatz_alarm]
+let audioArray = [einsatz_alarm]
 
 btn_probe.addEventListener("click", function(){
+    btn_probe.disabled = "true";
     generateMeldung();
     let prevSoundDurationSum = 0;
     for (let soundnr = 0; soundnr < audioArray.length; soundnr++) {
@@ -28,6 +29,8 @@ btn_probe.addEventListener("click", function(){
     
         prevSoundDurationSum += audioArray[soundnr].duration * 1250;
     }
+    resetMeldung();
+    setTimeout(function(){btn_probe.disabled = false;}, prevSoundDurationSum)
 });
 
 function playSound(sound) {
@@ -36,4 +39,10 @@ function playSound(sound) {
 
 function generateMeldung(){
     audioArray.push(h3, HLF, TLF, LF8);
+}
+
+function resetMeldung(){
+    audioArray = [];
+    audioArray.push(einsatz_alarm);
+    
 }
