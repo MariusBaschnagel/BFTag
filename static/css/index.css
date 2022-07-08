@@ -54,6 +54,7 @@ th {
     display: flex;
     flex-direction: row;
     gap: 2em;
+    min-height: auto;
 }
 
 #wrapper {
@@ -98,11 +99,69 @@ h3 {
     border: 3px solid DarkRed;
     background-color: hsla(0, 0%, 100%, 0.9);
     margin: 0 auto;
-    padding: 0.5em;
+    padding: 0;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     width: 50%;
+    min-height: 20em;
+}
+
+.spaceline {
+    size: 5px;
+    height: 3px;
+    width: 100%;
+    border: 0;
+    color: black;
+    background-color: darkred;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebox a {
+    align-self: center;
+    width: 60%;
+}
+
+.map-style {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 10px;
+}
+
+.map {
+    height: 25em;
+}
+
+.log {
+    display: flex;
+    flex-direction: column;
+    min-height: 25em;
+}
+
+.log h2 {
+    text-align: left;
+    margin: 0.5em 0.7em 0.2em 0.7em;
+    padding: 0;
+}
+
+.log-box {
+    margin: 0 1em;
+    min-width: 90%;
+    min-height: 70%;
+    border: 1px solid black;
+}
+
+.right {
+    width: 80%;
+}
+
+.einsatz-nachricht {
+    margin-left: 1em;
+    text-align: left;
 }
 
 .btn {
@@ -334,7 +393,7 @@ footer {
         clear: both;
         position: relative;
         z-index: 10;
-        height: 3em;
+        height: 2em;
         margin-top: -3em;
         width: 100%;
         min-width: 500px;
