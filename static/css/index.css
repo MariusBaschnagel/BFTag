@@ -47,6 +47,15 @@ th {
     text-align: center;
 }
 
+.main-overview {
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+}
+
 #wrapper {
     position: relative;
     min-height: 100%;
@@ -83,6 +92,30 @@ th {
 h2,
 h3 {
     color: black;
+}
+
+.sidebox {
+    border: 3px solid DarkRed;
+    background-color: hsla(0, 0%, 100%, 0.9);
+    margin: 0 auto;
+    padding: 0.5em;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.btn {
+    border: 2px solid white;
+    background-color: darkred;
+    padding: 0.5em;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: white;
 }
 
 #box-text {
@@ -318,7 +351,6 @@ footer {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    float: center;
     min-width: 80px;
     cursor: default;
 }
@@ -333,7 +365,6 @@ footer {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    float: center;
     min-width: 80px;
     cursor: not-allowed;
 }
@@ -354,7 +385,6 @@ footer {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    float: center;
     min-width: 80px;
     border-radius: 10px;
 }
