@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}Übersicht{% endblock title %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static "css/index.css" %}">
+{% endblock %}
+
+{% block content %}
+    <div class="main-overview">
+        <div class="mysidebox">
+            <h1>Menü</h1>
+            <a href="#" class="mybtn" target="_blank">Neuer Einsatz</a>
+            <a href="#" class="mybtn" target="_blank">Einsatzmonitor</a>
+            <a href="#" class="mybtn" target="_blank">Fahrzeuge verwalten</a>
+            <a class="mybtn" id="probealarm">Probealarm</a>
+            <a href="{% url "logout" %}" class="mybtn">Logout</a>
+        </div>
+        <div class="mysidebox right">
+            <div class="map">
+                <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2581.3046670060035!2d8.435254154450318!3d49.686235232832644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797d5347d0ee27b%3A0xc4c87bf6b49fd79!2sFreiwillige%20Feuerwehr%20Biblis!5e0!3m2!1sde!2sde!4v1657304999548!5m2!1sde!2sde"
+                        class="map-style" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <hr class="spaceline">
+            <div class="log">
+                <h2>Einsatz-Log:</h2>
+                <div class="log-box">
+                    <p class="einsatz-nachricht">>> Test-Einsatz: H1 | Baum auf Straße | Viktoriastraße 2, Biblis |
+                        HLF, TLF</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="../../static/js/alarmtest.js" defer></script>
+{% endblock %}

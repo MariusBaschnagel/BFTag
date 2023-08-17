@@ -1,0 +1,76 @@
+{% load i18n %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Base{% endblock title %} | Alarmsystem BF Tag</title>
+    {% block head_favicon %}
+        <link rel="icon" type="image/png" href="{% static "media/logo.png" %}">
+    {% endblock head_favicon %}
+    <meta http-equiv="content-type" content="text/html">
+    <meta http-equiv="imagetoolbar" content="false">
+    <meta name="page-topic" content="System">
+    <meta name="robots" content="INDEX,NOFOLLOW">
+    <meta name="viewport" content="width=device-width">
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/c464a9f215.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static "bootstrap5/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/index.css" %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Ubuntu&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+          href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#cbcbcb",
+                        "text": "#000000"
+                    },
+                    "button": {
+                        "background": "#8b0000"
+                    }
+                },
+                "content": {
+                    "message": "Zur optimalen Nutzererfahrung nutzen wir auf unserer Website Cookies.",
+                    "dismiss": "Einverstanden",
+                    "link": "Mehr Informationen",
+                    "href": "./datenschutz.html"
+                }
+            })
+        });
+    </script>
+    {% block head %}
+    {% endblock %}
+</head>
+
+<body>
+<div id="main-wrapper" class="ms-2 me-2 pt-2">
+    {% block content %}
+    {% endblock %}
+</div>
+
+<footer class="footer-index">
+    <span id="footer-text">
+        <a href="">Informationen</a> |
+        <a href="" target="_blank">Kontakt</a> |
+        <a href="{% url "datenschutz" %}">Datenschutz</a> |
+        <a href="">Impressum</a>
+    </span>
+</footer>
+
+<script src="{% static "bootstrap5/js/bootstrap.bundle.min.js" %}"></script>
+{% block scripts %}
+{% endblock %}
+</body>
+</html>

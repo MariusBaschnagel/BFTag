@@ -1,10 +1,10 @@
 html {
-    height: 99%;
+    height: 100%;
 }
 
 body {
-    height: 99%;
-    width: 99%;
+    height: 100%;
+    width: 100%;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Ubuntu', sans-serif;
     background-image: url("../media/hintergrundbild.jpg");
@@ -57,7 +57,7 @@ th {
     min-height: auto;
 }
 
-#wrapper {
+#main-wrapper {
     position: relative;
     min-height: 100%;
     min-width: 500px;
@@ -95,7 +95,8 @@ h3 {
     color: black;
 }
 
-.sidebox {
+.mysidebox {
+    position: relative;
     border: 3px solid DarkRed;
     background-color: hsla(0, 0%, 100%, 0.9);
     margin: 0 auto;
@@ -118,7 +119,7 @@ h3 {
     padding: 0;
 }
 
-.sidebox a {
+.mysidebox a {
     align-self: center;
     width: 60%;
 }
@@ -164,7 +165,7 @@ h3 {
     text-align: left;
 }
 
-.btn {
+.mybtn {
     border: 2px solid white;
     background-color: darkred;
     padding: 0.5em;
@@ -173,7 +174,7 @@ h3 {
     cursor: pointer;
 }
 
-.btn:hover {
+.mybtn:hover {
     color: white;
 }
 
@@ -205,9 +206,7 @@ footer {
     position: relative;
     z-index: 10;
     height: 30px;
-    width: 50%;
     max-width: 500px;
-    min-width: 400px;
     margin: auto;
     margin-top: -3em;
     background-color: hsla(0, 0%, 50%, 0.9);
@@ -335,7 +334,7 @@ footer {
     }
 }
 
-@media screen and (max-width:1300px) {
+@media screen and (max-width: 1300px) {
     textarea {
         width: 540px;
         height: 150px;
