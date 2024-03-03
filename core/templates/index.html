@@ -10,6 +10,7 @@
 
 {% block content %}
     <div class="main-overview">
+        {% include 'includes/messages.html' %}
         <div class="mysidebox">
             <h1>Menü</h1>
             <button class="mybtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Neuer Einsatz</button>
@@ -62,7 +63,7 @@
                 <legend class="col-form-label col-sm-2 pt-0">Fahrzeuge</legend>
                 <div class="col-sm-10">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="test" name="test">
+                        <input class="form-check-input" type="checkbox" id="test" name="fahrzeug" value="test">
                         <label class="form-check-label" for="test">
                             Test
                         </label>
@@ -70,9 +71,9 @@
                     {% for fahrzeug in fahrzeuge %}
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="{{ fahrzeug.id }}"
-                                   name="{{ fahrzeug.name }}">
+                                   name="fahrzeug" value="{{ fahrzeug.name }}">
                             <label class="form-check-label" for="{{ fahrzeug.id }}">
-                                {{ fahrzeug.name }}
+                                {{ fahrzeug.shortname }}
                             </label>
                         </div>
                     {% endfor %}
