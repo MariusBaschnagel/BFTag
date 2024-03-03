@@ -46,3 +46,9 @@ function resetMeldung(){
     audioArray.push(einsatz_alarm);
     
 }
+
+function remove(id) {
+    let el = document.getElementById(id)
+    el.replaceChildren();
+    el.remove();
+}
