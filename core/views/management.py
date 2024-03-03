@@ -1,5 +1,7 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
+from .. import models
 
 
 def datenschutz(request):
@@ -11,4 +13,6 @@ def index(request):
     if request.method == "POST":
         data = request.POST
         print(data)
-    return render(request, "index.html")
+        if "fahrzeug" not in data:
+            messages.error(request, "Keine Fahrzeuge in Einsatz hinterlegt.")
+    return render(request, "index.html", context={"fahrzeuge": models.Fahrzeug.objects.all()})
