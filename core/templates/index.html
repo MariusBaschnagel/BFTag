@@ -12,8 +12,8 @@
     <div class="main-overview">
         <div class="mysidebox">
             <h1>Menü</h1>
-            <a href="#" class="mybtn" target="_blank">Neuer Einsatz</a>
-            <a href="#" class="mybtn" target="_blank">Einsatzmonitor</a>
+            <button class="mybtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Neuer Einsatz</button>
+            <a href="{% url "einsatzmonitor" %}" class="mybtn" target="_blank">Einsatzmonitor</a>
             <a href="#" class="mybtn" target="_blank">Fahrzeuge verwalten</a>
             <a class="mybtn" id="probealarm">Probealarm</a>
             <a href="{% url "logout" %}" class="mybtn">Logout</a>
@@ -36,6 +36,57 @@
         </div>
     </div>
 
+{% endblock %}
+
+{% block modal %}
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Neuen Einsatz anlegen</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <form method="post">
+        <div class="modal-body">
+            {% csrf_token %}
+            <div class="row mb-3">
+                <label for="stichwort" class="col-sm-2 col-form-label">Stichwort</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="stichwort" name="stichwort" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="adresse" class="col-sm-2 col-form-label">Adresse</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="adresse" name="adresse" required>
+                </div>
+            </div>
+            <fieldset class="row mb-3">
+                <legend class="col-form-label col-sm-2 pt-0">Fahrzeuge</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="test" name="test">
+                        <label class="form-check-label" for="test">
+                            Test
+                        </label>
+                    </div>
+                    {% for fahrzeug in fahrzeuge %}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="{{ fahrzeug.id }}"
+                                   name="{{ fahrzeug.name }}">
+                            <label class="form-check-label" for="{{ fahrzeug.id }}">
+                                {{ fahrzeug.name }}
+                            </label>
+                        </div>
+                    {% endfor %}
+                </div>
+            </fieldset>
+
+        </div>
+        <div class="modal-footer d-flex flex-column">
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Abbrechen</button>
+                <button type="submit" class="btn btn-primary">Bestätigen</button>
+            </div>
+        </div>
+    </form>
 {% endblock %}
 
 {% block scripts %}

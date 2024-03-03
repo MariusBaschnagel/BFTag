@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}Einsatzmonitor{% endblock title %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static "css/index.css" %}">
+{% endblock %}
+
+{% block content %}
+    <h1 class="h1 text-center">EINSATZMONITOR</h1>
+    <div class="monitor-holder"></div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="../../static/js/alarmtest.js" defer></script>
+{% endblock %}

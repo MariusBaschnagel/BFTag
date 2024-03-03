@@ -108,6 +108,19 @@ h3 {
     min-height: 20em;
 }
 
+.monitor-holder {
+    position: relative;
+    border: 3px solid DarkRed;
+    background-color: hsla(0, 0%, 100%, 0.9);
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 20em;
+}
+
 .spaceline {
     size: 5px;
     height: 3px;
@@ -119,7 +132,7 @@ h3 {
     padding: 0;
 }
 
-.mysidebox a {
+.mysidebox a, button {
     align-self: center;
     width: 60%;
 }

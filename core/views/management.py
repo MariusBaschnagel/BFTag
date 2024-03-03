@@ -8,4 +8,7 @@ def datenschutz(request):
 
 @login_required
 def index(request):
+    if request.method == "POST":
+        data = request.POST
+        print(data)
     return render(request, "index.html")

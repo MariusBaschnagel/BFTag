@@ -58,16 +58,20 @@
 <div id="main-wrapper" class="ms-2 me-2 pt-2">
     {% block content %}
     {% endblock %}
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+         aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                {% block modal %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
 </div>
 
-<footer class="footer-index">
-    <span id="footer-text">
-        <a href="">Informationen</a> |
-        <a href="" target="_blank">Kontakt</a> |
-        <a href="{% url "datenschutz" %}">Datenschutz</a> |
-        <a href="">Impressum</a>
-    </span>
-</footer>
+{% block footer %}
+{% endblock %}
 
 <script src="{% static "bootstrap5/js/bootstrap.bundle.min.js" %}"></script>
 {% block scripts %}
