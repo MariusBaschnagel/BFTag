@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
+from django.utils import timezone
 from core.models import Fahrzeug, Logmessage
 
 
@@ -26,5 +27,7 @@ def index(request):
         log = Logmessage(stichwort=stichwort, adresse=adresse, fahrzeuge=fstring).save()
     return render(request, "index.html", context={
         "fahrzeuge": Fahrzeug.objects.all(),
-        "logmessages": Logmessage.objects.all()
+        "logmessages": Logmessage.objects.filter(
+            timestamp__gte=timezone.now() - timezone.timedelta(days=2)
+        )
     })
