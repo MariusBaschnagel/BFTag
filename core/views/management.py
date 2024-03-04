@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-from .. import models
+from core.models import Fahrzeug, Logmessage
 
 
 def datenschutz(request):
@@ -11,8 +11,20 @@ def datenschutz(request):
 @login_required
 def index(request):
     if request.method == "POST":
-        data = request.POST
-        print(data)
-        if "fahrzeug" not in data:
+        if "fahrzeuge" not in request.POST:
             messages.error(request, "Keine Fahrzeuge in Einsatz hinterlegt.")
-    return render(request, "index.html", context={"fahrzeuge": models.Fahrzeug.objects.all()})
+
+        stichwort = request.POST["stichwort"]
+        adresse = request.POST["adresse"]
+        fstring = ""
+
+        for f in request.POST.getlist("fahrzeuge"):
+            fstring += Fahrzeug.objects.get(pk=f).shortname
+            fstring += ", "
+        fstring = fstring[:-2]
+
+        log = Logmessage(stichwort=stichwort, adresse=adresse, fahrzeuge=fstring).save()
+    return render(request, "index.html", context={
+        "fahrzeuge": Fahrzeug.objects.all(),
+        "logmessages": Logmessage.objects.all()
+    })
