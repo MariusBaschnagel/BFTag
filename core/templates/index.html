@@ -31,8 +31,11 @@
                 <h2>Einsatz-Log:</h2>
                 <div class="log-box">
                     {% for operation in operations %}
-                        <div class="float-start" href={% url "operation_details" operation.pk %}> {{ operation.keyword }} | {{ operation.address }} |
-                            {{ operation.vehicles }}
+                        <div class="float-start">> {{ operation.keyword }} | {{ operation.address }} |
+                            {{ operation.vehicles }} | 
+                            <a class="text-primary" href={% url "operation_details" operation.pk %}>
+                                {% translate "Details" %}
+                            </a>
                         </div>
                         <div class="float-end me-1">{{ operation.dispatched|date:"d/m/Y H:m:s" }}</div>
                     {% endfor %}
