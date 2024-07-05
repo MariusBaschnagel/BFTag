@@ -30,11 +30,11 @@
             <div class="log">
                 <h2>Einsatz-Log:</h2>
                 <div class="log-box">
-                    {% for logmessage in logmessages %}
-                        <div class="float-start">>> {{ logmessage.stichwort }} | {{ logmessage.adresse }} |
-                            {{ logmessage.fahrzeuge }}
+                    {% for operation in operations %}
+                        <div class="float-start" href={% url "operation_details" operation.pk %}> {{ operation.keyword }} | {{ operation.address }} |
+                            {{ operation.vehicles }}
                         </div>
-                        <div class="float-end me-1">{{ logmessage.timestamp|date:"d/m/Y H:m:s" }}</div>
+                        <div class="float-end me-1">{{ operation.dispatched|date:"d/m/Y H:m:s" }}</div>
                     {% endfor %}
                 </div>
             </div>
@@ -45,33 +45,33 @@
 
 {% block modal %}
     <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Neuen Einsatz anlegen</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">{% translate "Dispatch new operation" %}</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <form method="post">
         <div class="modal-body">
             {% csrf_token %}
             <div class="row mb-3">
-                <label for="stichwort" class="col-sm-2 col-form-label">Stichwort</label>
+                <label for="stichwort" class="col-sm-2 col-form-label">{% translate "Keyword" %}</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="stichwort" name="stichwort" placeholder="H1 Ölspur" required>
                 </div>
             </div>
             <div class="row mb-3">
-                <label for="adresse" class="col-sm-2 col-form-label">Adresse</label>
+                <label for="adresse" class="col-sm-2 col-form-label">{% translate "Address" %}</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Berlinerstraße 36, Biblis" required>
                 </div>
             </div>
             <fieldset class="row mb-3">
-                <legend class="col-form-label col-sm-2 pt-0">Fahrzeuge</legend>
+                <legend class="col-form-label col-sm-2 pt-0">{% translate "Vehicles" %}</legend>
                 <div class="col-sm-10">
-                    {% for fahrzeug in fahrzeuge %}
+                    {% for vehicle in vehicles %}
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="{{ fahrzeug.shortname }}"
-                                   name="fahrzeuge" value="{{ fahrzeug.pk }}">
-                            <label class="form-check-label" for="{{ fahrzeug.shortname }}">
-                                {{ fahrzeug.shortname }}
+                            <input class="form-check-input" type="checkbox" id="{{ vehicle.shortname }}"
+                                   name="fahrzeuge" value="{{ vehicle.pk }}">
+                            <label class="form-check-label" for="{{ vehicle.shortname }}">
+                                {{ vehicle.shortname }}
                             </label>
                         </div>
                     {% endfor %}
@@ -81,8 +81,8 @@
         </div>
         <div class="modal-footer d-flex flex-column">
             <div class="btn-group">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Abbrechen</button>
-                <button type="submit" class="btn btn-primary">Bestätigen</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% translate "Cancel" %}</button>
+                <button type="submit" class="btn btn-primary">{% translate "Dispatch" %}</button>
             </div>
         </div>
     </form>

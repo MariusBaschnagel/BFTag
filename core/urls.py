@@ -6,5 +6,6 @@ urlpatterns = [
     path("", management.index, name="index"),
     path("datenschutz", management.datenschutz, name="datenschutz"),
     path("einsatzmonitor", monitor.einsatzmonitor, name="einsatzmonitor"),
-    re_path(r'^i18n/', include('django.conf.urls.i18n')),
+    path("operation/<int:id>", management.operation_details, name="operation_details"),
+    re_path(r"^i18n/", include("django.conf.urls.i18n")),
 ]
